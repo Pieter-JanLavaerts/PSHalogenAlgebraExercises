@@ -29,6 +29,6 @@ render state =
         [ HH.text "Click me" ]
     ]
 
-handleAction :: forall cs o m. Action → H.HalogenM State Action cs o m Unit
+handleAction :: forall cs o m. Action -> H.HalogenM State Action cs o m Unit
 handleAction = case _ of
   Increment -> H.modify_ \st -> st { count = st.count + 1 }
